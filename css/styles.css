@@ -1,0 +1,12 @@
+body {
+  background-color: #f8f3ed;
+}
+h1 {
+  background-color: #ffcc00;
+  color: black;
+  font-size: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  border-radius: 25px;
+}
