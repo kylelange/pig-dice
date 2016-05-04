@@ -7,10 +7,11 @@
   // the player can "hold" and their turn score is added to their total score
   // game is over when first player reaches 100 total score
 
-function Player() {
-  //isTurn?
-  //turnScore
-  //gameScore
+function Player(name) {
+  this.name=name;
+  this.gameScore=0;
+  this.turnScore=0;
+  this.isTurn=false;
 }
 
 function Die() {
@@ -18,28 +19,23 @@ function Die() {
 }
 
 function Game() {
-  //gameover?
-  //whose turn?
-  //player array
+  this.gameOver = true;
+  var currentPlayer = 0;
+  var players=[];
+}
+
+Game.prototype.addPlayer=function(player) {
+  this.players.push(player);
 }
 
 // UI logic
+var newGame = new Game();
 // Setup Game: List Players
+$("#addPlayer").click(function() {
+  var newPlayer = new Player($("#playerName").val());
+  $("#listPlayers").append("<li>" + newPlayer.name + "</li>");
+  $("#playerName").val("");
+});
 // Turn - next player and roll until 1 or "hold"
 // Score - add turn score to total at end of turn
 // Check for winner, next player...
-var GameUI = {
-  //nextPlayer
-},
-{
-  //nextRoll
-},
-{
-  //display scores
-},
-{
-  //displayScore
-},
-{
-  //populateIdWithHTML
-},

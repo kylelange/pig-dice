@@ -1,7 +1,7 @@
 # :pig: [Pig-Dice](http://karenfreemansmith.github.io/pig-dice)
 ![project screenshot](/img/screenshot.jpg)
 
-__Version 1: April 18, 2016__
+__Version 1: May 3, 2016__
 ## by [Karen Freeman-Smith](http://karenfreemansmith.github.io)
 
 ### Description
