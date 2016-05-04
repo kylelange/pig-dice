@@ -12,6 +12,36 @@
   <body>
     <div class="container">
       <h1>Play Pig-Dice</h1>
+      <div class="row">
+        <div class="col-xs-4">
+          <h3 id="rules">Rules of Play:</h3>
+          <ul>
+            <li>A player rolls the dice</li>
+            <li>If the player gets "1" then their turn is over and they score 0.</li>
+            <li>If the player does not get "1" then the die amount is added to their turn score and they can roll again or hold.</li>
+            <li>When the player holds, their turn amount is added to their total score.</li>
+            <li>Repeat until one player has 100 points ore more.</li>
+          </ul>
+        </div>
+        <div class="col-xs-4">
+          <h3 id="gameBoard">Playing Area</h3>
+          <h4>Current Player Name</h4>
+          <h4>Current Turn Score</h4>
+          <div id="displayDie">1</div>
+          <p>
+            <button class="btn btn-default" id="roll">Roll Again</button>
+            <button class="btn btn-default" id="hold">Hold</button>
+          </p>
+        </div>
+        <div class="col-xs-4">
+          <h3 id="players">Players</h3>
+          <ul id="listPlayers"></ul>
+          <h4>Add Player:</h4>
+          <input type="text" id="playerName"><br>
+          <button class="btn btn-default" id="addPlayer">Add Player</button>
+          <button class="btn btn-default" id="playGame">(re)Start Game</button>
+        </div>
+      </div>
     </div>
   <script src="js/jquery-1.12.2.js"></script>
   <script src="js/bootstrap.js"></script>

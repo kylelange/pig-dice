@@ -10,3 +10,27 @@ h1 {
   font-family: 'Pacifico', cursive;
   border-radius: 25px;
 }
+h3 {
+  background-color: #ffcc00;
+  color: black;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 15px;
+}
+button{
+  margin: 6px;
+}
+.btn-default {
+  background-color: #ffcc00;
+  color: black;
+}
+
+#displayDie {
+  font-size: 6em;
+  text-align: center;
+  border: solid 5px black;
+  width: 2em;
+  height: 2em;
+  display: table-cell;
+  vertical-align: middle;
+}
