@@ -11,7 +11,6 @@ function Player(name) {
   this.name=name;
   this.gameScore=0;
   this.turnScore=0;
-  this.isTurn=false;
   //console.log(this);
 }
 
@@ -46,6 +45,11 @@ Game.prototype.startGame=function(){
   this.currentPlayer = 0;
 }
 
+Game.prototype.endTurn = function() {
+  this.players[this.currentPlayer].gameScore+=this.players[this.currentPlayer].turnScore;
+  this.currentPlayer++;
+}
+
 // UI logic
 var newGame = new Game();
 // Setup Game: List Players
@@ -53,15 +57,30 @@ $("#addPlayer").click(function() {
   var newPlayer = new Player($("#playerName").val());
   $("#listPlayers").append("<li>" + newPlayer.name + "</li>");
   newGame.addPlayer(newPlayer);
-
   $("#playerName").val("");
+});
+
+$("#roll").click(function(){
+  newGame.die.roll();
+    if (newGame.die.value === 1) {
+      newGame.players[newGame.currentPlayer].turnScore = 0;
+      newGame.endTurn();
+      //alert(newGame.players[newGame.currentPlayer].name);
+    } else {
+      newGame.players[newGame.currentPlayer].turnScore+=newGame.die.value;
+    }
+  $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
+  $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
+  $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
+  //console.log(newGame);
 });
 // Turn - next player and roll until 1 or "hold"
   $("#playGame").click(function(){
     newGame.startGame();
     newGame.players[newGame.currentPlayer].turnScore=newGame.die.value;
-    $("#displayDie").text(newGame.die.value);
-    console.log(newGame);
+    $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
+    $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
+    $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
   });
 // Score - add turn score to total at end of turn
 // Check for winner, next player...

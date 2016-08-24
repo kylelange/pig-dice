@@ -15,15 +15,15 @@ Each turn, a player repeatedly rolls a die until either a 1 is rolled or the pla
 
 The first player to score 100 or more points wins.
 BDD:
-* Spec 1: the program will roll a d6 randomly, accumulate the die rolls.
+*Spec 1: the program will roll a d6 randomly, accumulate the die rolls.
   * Input: a random number from 1 - 6: (3)
-  * Output: score = score + new random number (0 + 3 = 3)
+  * Output: score = score + new random number (0 + 3 = 3)*
 *Spec 2: Be able to add on player
   * Input: Name: Karen
   * Output: return "Karen"*
-* Spec 3: Assign the player a score
+*Spec 3: Assign the player a score
   * Input: 3
-  * Output: Karen Score = 3
+  * Output: Karen Score = 3*
 * Spec 4: End turn if the player rolls a 1
   * Input: dice = 1
   * Output Temp Score = 0

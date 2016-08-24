@@ -1,6 +1,7 @@
 body {
   background-color: #f8f3ed;
 }
+
 h1 {
   background-color: #ffcc00;
   color: black;
@@ -10,6 +11,7 @@ h1 {
   font-family: 'Pacifico', cursive;
   border-radius: 25px;
 }
+
 h3 {
   background-color: #ffcc00;
   color: black;
@@ -17,20 +19,26 @@ h3 {
   padding: 3px;
   padding-left: 15px;
 }
+
+#info h4 {
+  text-align: center;
+}
+
 button{
   margin: 6px;
 }
+
 .btn-default {
   background-color: #ffcc00;
   color: black;
 }
 
 #displayDie {
-  font-size: 6em;
-  text-align: center;
   border: solid 5px black;
-  width: 2em;
-  height: 2em;
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
+  margin: auto;
+}
+
+#displayDie img {
+  
 }
