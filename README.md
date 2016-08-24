@@ -30,9 +30,9 @@ BDD:
 *Spec 5: End turn if the player holds
   * Input: Player holds on (3)
   * Output: player score = player score + temp score (3 + 3 = 6)*
-* Spec 6: End the game when a player score >= 100.
+*Spec 6: End the game when a player score >= 100.
   * Input: temp score = 6
-  * Output: player score + temp score >= 100 (96 + 6 = 102)
+  * Output: player score + temp score >= 100 (96 + 6 = 102)*
 #### Uses:
 
 ### Setup/Installation

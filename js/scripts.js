@@ -36,11 +36,17 @@ function Game() {
   //console.log(this);
 }
 
+Game.prototype.endGame = function() {
+  this.gameOver = true;
+  this.currentPlayer = 0;
+  this.players=[];
+}
+
 Game.prototype.addPlayer=function(player) {
   this.players.push(player);
 }
 
-Game.prototype.startGame=function(){
+Game.prototype.startGame=function() {
   this.gameOver = false;
   this.currentPlayer = 0;
 }
@@ -60,6 +66,14 @@ var newGame = new Game();
 function endTurn () {
   newGame.endTurn();
 }
+function endGame (){
+  alert("end game!");
+  newGame.endGame();
+  $("#listPlayers").empty();
+  $("#displayDie").html("<img src='img/1.jpg' class='img-responsive'>");
+  $("#currentScore").text("Current Player Name");
+  $("#currentPlayer").text("Current Turn Score");
+}
 
 function startTurn () {
   newGame.die.roll();
@@ -75,6 +89,9 @@ function startTurn () {
     alert("Sorry, " + newGame.players[newGame.currentPlayer].name + " you rolled a 1. You get NOTHING!!");
     endTurn();
     startTurn();
+  }
+  if (newGame.players[newGame.currentPlayer].gameScore + newGame.players[newGame.currentPlayer].turnScore >= 100) {
+    setTimeout(endGame,500);
   }
 }
 // Setup Game: List Players
