@@ -12,10 +12,11 @@ function Player(name) {
   this.gameScore=0;
   this.turnScore=0;
   this.isTurn=false;
+  console.log(this);
 }
 
 function Die() {
-  //rolls die for each player/turn
+
 }
 
 function Game() {
