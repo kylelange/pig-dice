@@ -24,12 +24,12 @@ BDD:
 *Spec 3: Assign the player a score
   * Input: 3
   * Output: Karen Score = 3*
-* Spec 4: End turn if the player rolls a 1
+*Spec 4: End turn if the player rolls a 1
   * Input: dice = 1
-  * Output Temp Score = 0
-*  Spec 5: End turn if the player holds
+  * Output Temp Score = 0*
+*Spec 5: End turn if the player holds
   * Input: Player holds on (3)
-  * Output: player score = player score + temp score (3 + 3 = 6)
+  * Output: player score = player score + temp score (3 + 3 = 6)*
 * Spec 6: End the game when a player score >= 100.
   * Input: temp score = 6
   * Output: player score + temp score >= 100 (96 + 6 = 102)

@@ -47,11 +47,36 @@ Game.prototype.startGame=function(){
 
 Game.prototype.endTurn = function() {
   this.players[this.currentPlayer].gameScore+=this.players[this.currentPlayer].turnScore;
-  this.currentPlayer++;
+  this.players[this.currentPlayer].turnScore = 0;
+//debugger;
+  if (this.currentPlayer<this.players.length-1) {
+    this.currentPlayer++;
+  } else {
+    this.currentPlayer = 0;
+  }
 }
-
 // UI logic
 var newGame = new Game();
+function endTurn () {
+  newGame.endTurn();
+}
+
+function startTurn () {
+  newGame.die.roll();
+  if(newGame.die.value === 1) {
+    newGame.players[newGame.currentPlayer].turnScore=0;
+  } else {
+    newGame.players[newGame.currentPlayer].turnScore+=newGame.die.value;
+  }
+  $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
+  $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
+  $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
+  if(newGame.players[newGame.currentPlayer].turnScore===0) {
+    alert("Sorry, " + newGame.players[newGame.currentPlayer].name + " you rolled a 1. You get NOTHING!!");
+    endTurn();
+    startTurn();
+  }
+}
 // Setup Game: List Players
 $("#addPlayer").click(function() {
   var newPlayer = new Player($("#playerName").val());
@@ -61,26 +86,16 @@ $("#addPlayer").click(function() {
 });
 
 $("#roll").click(function(){
-  newGame.die.roll();
-    if (newGame.die.value === 1) {
-      newGame.players[newGame.currentPlayer].turnScore = 0;
-      newGame.endTurn();
-      //alert(newGame.players[newGame.currentPlayer].name);
-    } else {
-      newGame.players[newGame.currentPlayer].turnScore+=newGame.die.value;
-    }
-  $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
-  $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
-  $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
-  //console.log(newGame);
+  startTurn();
 });
 // Turn - next player and roll until 1 or "hold"
-  $("#playGame").click(function(){
-    newGame.startGame();
-    newGame.players[newGame.currentPlayer].turnScore=newGame.die.value;
-    $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
-    $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
-    $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
-  });
+$("#playGame").click(function(){
+  newGame.startGame();
+  startTurn();
+});
 // Score - add turn score to total at end of turn
+$("#hold").click(function(){
+  endTurn();
+  startTurn();
+});
 // Check for winner, next player...
