@@ -71,7 +71,7 @@ function endGame() {
   alert("end game!");
   newGame.endGame();
   $("#listPlayers").empty();
-  $("#displayDie").html("<img src='img/1.jpg' class='img-responsive'>");
+  $("#displayDie").html("<img src='img/roll.png' class='img-responsive'>");
   $("#currentScore").text("Current Player Name");
   $("#currentPlayer").text("Current Turn Score");
 }
