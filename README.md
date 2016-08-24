@@ -1,8 +1,8 @@
 # :pig: [Pig-Dice](http://karenfreemansmith.github.io/pig-dice)
 ![project screenshot](/img/screenshot.jpg)
 
-__Version 1: May 3, 2016__
-## by [Karen Freeman-Smith](http://karenfreemansmith.github.io) and [Kyle Lange]
+__Version 2: August 24, 2016__
+## by [Karen Freeman-Smith](http://karenfreemansmith.github.io) and [Kyle Lange](https://github.com/kylelange)
 
 ### Description
 __*A webpage that plays pig-dice.*__
@@ -33,7 +33,6 @@ BDD:
 *Spec 6: End the game when a player score >= 100.
   * Input: temp score = 6
   * Output: player score + temp score >= 100 (96 + 6 = 102)*
-#### Uses:
 
 ### Setup/Installation
 *None required. Clone or download and extract to use*
@@ -42,7 +41,7 @@ BDD:
 For questions or comments, please __email [Karen](karenfreemansmith@gmail.com)__
 
 ### Known Issues
-* Still Under Construction
+* None
 
 ### Technologies Used
 ###### HTML, CSS, Bootstrap, JavaScript, jQuery
@@ -50,4 +49,4 @@ For questions or comments, please __email [Karen](karenfreemansmith@gmail.com)__
 ### Legal
 *Licensed under the GNU General Public License v3.0*
 
-Copyright (c) 2016 **_Karen Freeman-Smith_**
+Copyright (c) 2016 **_Karen Freeman-Smith_ & _Kyle Lange_**
