@@ -18,9 +18,9 @@ BDD:
 * Spec 1: the program will roll a d6 randomly, accumulate the die rolls.
   * Input: a random number from 1 - 6: (3)
   * Output: score = score + new random number (0 + 3 = 3)
-* Spec 2: Be able to add on player
+*Spec 2: Be able to add on player
   * Input: Name: Karen
-  * Output: return "Karen"
+  * Output: return "Karen"*
 * Spec 3: Assign the player a score
   * Input: 3
   * Output: Karen Score = 3

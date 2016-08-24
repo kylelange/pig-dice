@@ -15,14 +15,16 @@ function Player(name) {
   console.log(this);
 }
 
-function Die() {
 
+
+function Die() {
 }
 
 function Game() {
   this.gameOver = true;
   var currentPlayer = 0;
-  var players=[];
+  this.players=[];
+  console.log(this);
 }
 
 Game.prototype.addPlayer=function(player) {
@@ -35,6 +37,8 @@ var newGame = new Game();
 $("#addPlayer").click(function() {
   var newPlayer = new Player($("#playerName").val());
   $("#listPlayers").append("<li>" + newPlayer.name + "</li>");
+  newGame.addPlayer(newPlayer);
+  console.log(Game);
   $("#playerName").val("");
 });
 // Turn - next player and roll until 1 or "hold"
