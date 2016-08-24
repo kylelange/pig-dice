@@ -12,9 +12,8 @@ function Player(name) {
   this.gameScore=0;
   this.turnScore=0;
   this.isTurn=false;
-  console.log(this);
+  //console.log(this);
 }
-
 
 
 function Die() {
@@ -22,13 +21,18 @@ function Die() {
 
 function Game() {
   this.gameOver = true;
-  var currentPlayer = 0;
+  this.currentPlayer = 0;
   this.players=[];
-  console.log(this);
+  //console.log(this);
 }
 
 Game.prototype.addPlayer=function(player) {
   this.players.push(player);
+}
+
+Game.prototype.startGame=function(){
+  this.gameOver = false;
+  this.currentPlayer = 0;
 }
 
 // UI logic
@@ -38,9 +42,14 @@ $("#addPlayer").click(function() {
   var newPlayer = new Player($("#playerName").val());
   $("#listPlayers").append("<li>" + newPlayer.name + "</li>");
   newGame.addPlayer(newPlayer);
-  console.log(Game);
+
   $("#playerName").val("");
 });
 // Turn - next player and roll until 1 or "hold"
+  $("#playGame").click(function(){
+    newGame.startGame();
+    newGame.players[newGame.currentPlayer].turnScore=3;
+    console.log(newGame);
+  });
 // Score - add turn score to total at end of turn
 // Check for winner, next player...
