@@ -63,16 +63,25 @@ Game.prototype.endTurn = function() {
 }
 // UI logic
 var newGame = new Game();
-function endTurn () {
+function endTurn() {
   newGame.endTurn();
 }
-function endGame (){
+
+function endGame() {
   alert("end game!");
   newGame.endGame();
   $("#listPlayers").empty();
   $("#displayDie").html("<img src='img/1.jpg' class='img-responsive'>");
   $("#currentScore").text("Current Player Name");
   $("#currentPlayer").text("Current Turn Score");
+}
+
+function showScores() {
+  $("#listPlayerScores").empty();
+  newGame.players.forEach(function(player){
+    $("#listPlayerScores").append("<h3>"+player.name+": "+player.gameScore+"</h3>");
+
+  });
 }
 
 function startTurn () {
@@ -85,6 +94,7 @@ function startTurn () {
   $("#displayDie").html("<img src='img/"+newGame.die.value+".jpg' class='img-responsive'>");
   $("#currentScore").text(newGame.players[newGame.currentPlayer].turnScore);
   $("#currentPlayer").text(newGame.players[newGame.currentPlayer].name + ": " + newGame.players[newGame.currentPlayer].gameScore);
+  showScores();
   if(newGame.players[newGame.currentPlayer].turnScore===0) {
     alert("Sorry, " + newGame.players[newGame.currentPlayer].name + " you rolled a 1. You get NOTHING!!");
     endTurn();
@@ -108,6 +118,8 @@ $("#roll").click(function(){
 // Turn - next player and roll until 1 or "hold"
 $("#playGame").click(function(){
   newGame.startGame();
+  $("#listPlayers").hide();
+  showScores();
   startTurn();
 });
 // Score - add turn score to total at end of turn

@@ -24,6 +24,10 @@ h3 {
   text-align: center;
 }
 
+#listPlayerScores h3 {
+  background-color: inherit;
+}
+
 button{
   margin: 6px;
 }
@@ -40,5 +44,5 @@ button{
 }
 
 #displayDie img {
-  
+
 }
