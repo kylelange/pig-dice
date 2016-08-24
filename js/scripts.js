@@ -16,13 +16,24 @@ function Player(name) {
 }
 
 
-function Die() {
+function Die(sides) {
+  this.sides = sides;
+  this.value = 1;
+  this.roll();
+  //console.log(this);
+}
+
+Die.prototype.roll=function(){
+    min = 1;
+    max = this.sides;
+    this.value = Math.floor(Math.random()*(max - min+1)) + min;
 }
 
 function Game() {
   this.gameOver = true;
   this.currentPlayer = 0;
   this.players=[];
+  this.die = new Die(6);
   //console.log(this);
 }
 
@@ -48,7 +59,8 @@ $("#addPlayer").click(function() {
 // Turn - next player and roll until 1 or "hold"
   $("#playGame").click(function(){
     newGame.startGame();
-    newGame.players[newGame.currentPlayer].turnScore=3;
+    newGame.players[newGame.currentPlayer].turnScore=newGame.die.value;
+    $("#displayDie").text(newGame.die.value);
     console.log(newGame);
   });
 // Score - add turn score to total at end of turn
