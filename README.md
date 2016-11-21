@@ -1,4 +1,4 @@
-# :pig: [Pig-Dice](http://karenfreemansmith.github.io/pig-dice)
+# [Pig-Dice](http://kylelange.github.io/pig-dice)
 ![project screenshot](/img/screenshot.jpg)
 
 __Version 2: August 24, 2016__
@@ -34,17 +34,26 @@ BDD:
   * Input: temp score = 6
   * Output: player score + temp score >= 100 (96 + 6 = 102)*
 
-### Setup/Installation
-*None required. Clone or download and extract to use*
+  ## Setup/Installation Requirements
+
+  1. Download this repo using your terminal: git clone repo-name pasted here
+
+  2. View the code by drag-and-dropping the file into your [favorite text editor](https://atom.io)
+
+  3. run/check-out the program by dropping the index/html file from your folder into your web browser
+
 
 ### Support & Contact
-For questions or comments, please __email [Karen](karenfreemansmith@gmail.com)__
+For questions or comments, please __email [Karen](karenfreemansmith@gmail.com) or [Kyle](baronsintrees@gmail.com)__
 
 ### Known Issues
-* None
+_There are no known bugs as of the last commit. Please send an ISSUE on github in the repository if you see something we have not._
 
-### Technologies Used
-###### HTML, CSS, Bootstrap, JavaScript, jQuery
+## Technologies Used
+
+* HTML5
+* CSS3
+* JavaScript with jQuery 3.1
 
 ### Legal
 *Licensed under the GNU General Public License v3.0*
